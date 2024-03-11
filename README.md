@@ -1,44 +1,41 @@
 # How to use Mapsted cordova plugin locally 
+1. In this development branch, there are two folders one is awesome-cordova-plugin and another one is mapsted-cordova-plugin. If you are using it by just downloading or git clone the branch in your local system then follow below steps-
 
-## In this development branch, there are two folders one is awesome-cordova-plugin and another one is mapsted-cordova-plugin. If you are using it by just downloading or git clone the branch in your local system then follow below steps-
+## Firstly download this both folders separately.
+For mapsted-cordova-plugin folder, After downloading the code in your system folder.
 
-# Firstly download this both folders separately.
-
-## For mapsted-cordova-plugin folder, After downloading the code in your system folder.
-
-## Install the plugin using plain local folder path in your Ionic cordova project.
+1. Install the plugin using plain local folder path in your Ionic cordova project.
 Run - ionic cordova plugin add "path to/YourCordovaPLuginFolder"
-
 
 ## For awesome-cordova-plugin folder 
 
-# In your AwesomePluginFolder after git clone install node modules
+1. In your AwesomePluginFolder after git clone install node modules
 Run - npm install
 
-# After npm install you have to run below command before install it in your ionic cordova project
+2. After npm install you have to run below command before install it in your ionic cordova project
 Run - npm run build
 
-# After you run command "npm run build" you will get dist folder then install that awesome cordova plugin code to your ionic cordova project. 
+3. After you run command "npm run build" you will get dist folder then install that awesome cordova plugin code to your ionic cordova project. 
 
-## Install awesome cordova plugin
+4. Install awesome cordova plugin
 Run - npm install "path to /AwesomePluginFolder/dist"
 
 # For Android Platform
 
-## You need to install both cordova plugin wrapper and awesome plugin in your ionic cordova project 
+1. You need to install both cordova plugin wrapper and awesome plugin in your ionic cordova project 
 Example - 
-## Create the project
-ionic start yourIonicCordovaProject blank --type=angular --cordova
+2. Create the project
+Run - ionic start yourIonicCordovaProject blank --type=angular --cordova
 
 Run - npm install
 
-## Add android platform
+3. Add android platform
 Run - ionic cordova platform add android
 
 
 ## You need to add permissions in AndroidManifest and some modifications in build.gradle, styles.xml and repositories.gradle files in ionic cordova project.
 
-### You can check the sample cordova project code for how to add the dependencies in this files.
+1. You can check the sample cordova project code for how to add the dependencies in this files.
 
 permissions - 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -46,7 +43,7 @@ permissions -
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     
 
-In build.gradle you can check the sample code for how to add the dependencies in this file. -
+2. In build.gradle you can check the sample code for how to add the dependencies in this file. -
 
 Path for build.gradle -
 yourIonicCordovaProject\platforms\android\app\build.gradle
@@ -110,12 +107,12 @@ after adding style file code add below in AndroidManifest file-
     android:theme="@style/AppTheme">
 </activity>
 
-# Add licence key file in Cordova project.
+3. Add licence key file in Cordova project.
 Path - 
 yourIonicCordovaProject\platforms\android\app\src\main\assets\demo_android_licence.key
 
-# Generate android build
+4. Generate android build
 Run - ionic cordova build android
 
-# Echo method is just for testing that you are able to access the cordova plugin or not.
+5. Echo method is just for testing that you are able to access the cordova plugin or not.
 
