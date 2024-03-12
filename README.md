@@ -1,55 +1,81 @@
 # How to use Mapsted cordova plugin locally 
 1. In this development branch, there are two folders one is awesome-cordova-plugin and another one is mapsted-cordova-plugin. If you are using it by just downloading or git clone the branch in your local system then follow below steps-
 
-## Firstly download this both folders separately.
-For mapsted-cordova-plugin folder, After downloading the code in your system folder.
+2. Firstly download, the mapsted-cordova-plugin and awesome-cordova-plugin folders separately.
 
-1. Install the plugin using plain local folder path in your Ionic cordova project.
-Run - ionic cordova plugin add "path to/YourCordovaPLuginFolder"
+## Ionic requirements
+You need to download below things
 
-## For awesome-cordova-plugin folder 
+1. Node.js: https://nodejs.org/en/download/
+2. NPM (Node Package Manager): Included with Node.js installation.
+3. NVM (Node Version Manager): https://github.com/nvm-sh/nvm
+4. Java JDK and JRE: https://www.oracle.com/java/technologies/javase-jdk15-downloads.html
+5. Visual Studio Code: https://code.visualstudio.com/
+6. Ionic CLI and Core (for both Cordova and Capacitor): https://ionicframework.com/docs/cli
+7. Android Studio: https://developer.android.com/studio
+8. Gradle: https://gradle.org/releases/
+9. Xcode -version -15.0: Available through the Mac App Store or https://developer.apple.com/xcode/
+10. CocoaPods: https://cocoapods.org/
 
-1. In your AwesomePluginFolder after git clone install node modules
-Run - npm install
+## Setup for how to use cordova plugin in Ionic cordova project
 
-2. After npm install you have to run below command before install it in your ionic cordova project
-Run - npm run build
+1. For Sample cordova project, Clone the repo, then install the packages using:
+Sample cordova project repository-
+https://github.com/Mapsted/MapstedSampleIonic/tree/development/mapsted-sample-cordova
+```sh
+npm install
+```
+2. Add android platform in your ionic cordova project
+```sh
+ionic cordova platform add android
+```
 
-3. After you run command "npm run build" you will get dist folder then install that awesome cordova plugin code to your ionic cordova project. 
+# Integrating into Existing Apps (Android)
 
-4. Install awesome cordova plugin
-Run - npm install "path to /AwesomePluginFolder/dist"
+1. You need to install both awesome-cordova-plugin folder and mapsted-cordova-plugin in your ionic cordova project.
 
-# For Android Platform
+2. Clone the repo, then for mapsted-cordova-plugin folder Install the plugin using local folder path
+```sh
+ionic cordova plugin add "path to/YourCordovaPLuginFolder"
+```
 
-1. You need to install both cordova plugin wrapper and awesome plugin in your ionic cordova project 
-Example - 
-2. Create the project
-Run - ionic start yourIonicCordovaProject blank --type=angular --cordova
+3. Clone the repo for awesome-cordova-plugin folder, in your AwesomePluginFolder after git clone install node modules
+```sh
+npm install
+```
 
-Run - npm install
+4. After npm install you have to run below command before install it in your ionic cordova project
+```sh
+npm run build
+```
 
-3. Add android platform
-Run - ionic cordova platform add android
+5. After you run command "npm run build" you will get dist folder then install then awesome cordova plugin code to your ionic cordova project. 
 
+6. Install awesome cordova plugin
+```sh
+npm install "path to /AwesomePluginFolder/dist"
+```
 
 ## You need to add permissions in AndroidManifest and some modifications in build.gradle, styles.xml and repositories.gradle files in ionic cordova project.
 
 1. You can check the sample cordova project code for how to add the dependencies in this files.
 
-permissions - 
+permissions(If it's not there in AndroidManifest.xml file)- 
+```sh
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```    
     
 
-2. In build.gradle you can check the sample code for how to add the dependencies in this file. -
+In build.gradle you can check the sample code for how to add the dependencies in this file(If you are facing build errors or crash). -
 
 Path for build.gradle -
 yourIonicCordovaProject\platforms\android\app\build.gradle
-
+ <!-- other dependencies -->
+```sh
 android {
-    <!-- other dependencies -->
+   
     packagingOptions {
       exclude 'META-INF/LICENSE.md'
       exclude 'META-INF/NOTICE.md'
@@ -79,40 +105,41 @@ android {
             buildConfig true
         }
 }
+```
 
 Path for Repository-
 yourIonicCordovaProject\platforms\android\app\repositories.gradle
 Example-
-
-ext.repos = {
-    google()
-    mavenCentral()
-    <!-- Add the below lines -->
+<!-- Add the below lines --> in ext.repos
+```sh
     maven { url = uri("https://jitpack.io") }
     maven { url = uri("https://mobilesdk.mapsted.com:8443/artifactory/gradle-mapsted") }
-}
+```
 
 Path for styles.xml (Add this below file code if you face crash issue in your app)-
 yourIonicCordovaProject\platforms\android\app\src\main\res\values\styles.xml
 Example -
-
+```sh
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
      Customize your theme here 
 </style>
+```
 
 after adding style file code add below in AndroidManifest file-
-
+```sh
 <activity
     android:name="com.mapsted.ui.map.MapstedMapActivity"
     android:theme="@style/AppTheme">
 </activity>
+```
 
-3. Add licence key file in Cordova project.
+2. Add licence key file in Cordova project.
 Path - 
 yourIonicCordovaProject\platforms\android\app\src\main\assets\demo_android_licence.key
 
-4. Generate android build
-Run - ionic cordova build android
+3. Generate android build
+```sh
+ionic cordova build android
+```
 
-5. Echo method is just for testing that you are able to access the cordova plugin or not.
-
+4. Echo method is just for testing that you are able to access the cordova plugin or not.
