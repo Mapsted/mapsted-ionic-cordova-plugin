@@ -24,5 +24,11 @@
         </config-file>
         <source-file src="src/android/CordovaPluginMapsted.java"
             target-dir="src/cordova/plugin/mapsted/CordovaPluginMapsted" />
+   
+        <!-- Add the following resource-file entry -->
+        <resource-file src="build-extras.gradle" target="build-extras.gradle" />
+        <resource-file src="src/android/styles.xml" target="res/values/styles.xml" />
+
+
     </platform>
 </plugin>
