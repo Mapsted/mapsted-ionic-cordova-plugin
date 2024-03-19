@@ -56,7 +56,7 @@ npm install <path to /AwesomePluginFolder/dist>
 ```
 
 ## Add permissions and file setup
-1. You need to add some modifications in build.gradle, styles.xml and repositories.gradle files in ionic cordova project.    
+1. You need to do some modifications in build.gradle, styles.xml and repositories.gradle files in ionic cordova project.    
 
 In build.gradle you can check the sample code for how to add the dependencies in this file(If you are facing build errors or crash). -
 

@@ -57,17 +57,7 @@ npm install <path to /AwesomePluginFolder/dist>
 ```
 
 ## Add permissions and file setup
-1. You need to add permissions in AndroidManifest and some modifications in build.gradle, styles.xml and repositories.gradle files in ionic cordova project.
-
-2. You can check the sample cordova project code for how to add the dependencies in this files.
-Path for AndroidManifest.xml file- yourIonicCordovaProject\platforms\android\app\src\main\AndroidManifest.xml 
-permissions(If it's not there in AndroidManifest.xml file)- 
-```sh
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-```    
-    
+1. You need to do some modifications in build.gradle, styles.xml and repositories.gradle files in ionic cordova project.
 
 In build.gradle you can check the sample code for how to add the dependencies in this file(If you are facing build errors or crash). -
 
@@ -75,37 +65,7 @@ Path for build.gradle -
 yourIonicCordovaProject\platforms\android\app\build.gradle
  <!-- other dependencies -->
 ```sh
-android {
-   
-    packagingOptions {
-      exclude 'META-INF/LICENSE.md'
-      exclude 'META-INF/NOTICE.md'
-      exclude 'META-INF/gradle/incremental.annotation.processors'
-    }
-    dataBinding {
-      enabled = true
-    }
-    other dependencies
-        buildTypes {
-            release {
-                signingConfig signingConfigs.release
-            }
-            create("staging") {
-                multiDexEnabled true
-                debuggable true
-                versionNameSuffix "-staging"
-                signingConfig signingConfigs.getByName("debug")
-            }
-        }
-        packagingOptions {
-            resources.excludes.add("META-INF/gradle/*")
-            resources.excludes.add("META-INF/*")
-        }
-        buildFeatures {
-            dataBinding true
-            buildConfig true
-        }
-}
+apply from: 'src/main/build-extras.gradle'
 ```
 
 Path for Repository-
@@ -134,14 +94,14 @@ after adding style file code add below in AndroidManifest file-
 </activity>
 ```
 
-3. Add licence key file in Cordova project.
+2. Add licence key file in Cordova project.
 Path - 
 yourIonicCordovaProject\platforms\android\app\src\main\assets\demo_android_licence.key
 
-4. Generate android build
+3. Generate android build
 ```sh
 ionic cordova build android
 ```
 
-5. Echo method in cordova plugin is just for testing that you are able to access the cordova plugin or not.
+4. Echo method in cordova plugin is just for testing that you are able to access the cordova plugin or not.
 
