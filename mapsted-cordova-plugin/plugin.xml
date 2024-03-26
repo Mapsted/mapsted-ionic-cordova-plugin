@@ -24,8 +24,11 @@
         </config-file>
         <source-file src="src/android/CordovaPluginMapsted.java"
             target-dir="src/cordova/plugin/mapsted/CordovaPluginMapsted" />
-   
+
         <!-- Add the following resource-file entry -->
+        <!-- If you add android_licence_cineca.key file in cordova plugin -->
+        <!-- <resource-file src="src/android/android_licence_cineca.key" target="assets/android_licence_cineca.key" /> -->
+   
         <resource-file src="build-extras.gradle" target="build-extras.gradle" />
         <resource-file src="src/android/styles.xml" target="res/values/styles.xml" />
 

@@ -9,6 +9,8 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.content.res.Resources;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 
 // Import statements for Mapsted functionality
@@ -35,6 +37,8 @@ import android.widget.ProgressBar;
 
 import com.mapsted.ui.map.MapstedMapActivity;
 import com.mapsted.ui.search.SearchCallbacksProvider;
+import android.os.Bundle;
+import com.google.gson.Gson;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -42,6 +46,8 @@ import com.mapsted.ui.search.SearchCallbacksProvider;
 public class CordovaPluginMapsted extends CordovaPlugin {
 
      private static final String TAG = "CordovaPluginMapsted";
+     public static final String SET_CUSTOM_PARAMS_JSON = "Set_Custom_Params_Json";
+
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -76,16 +82,42 @@ public class CordovaPluginMapsted extends CordovaPlugin {
         }
     }
 
+
+
+    private CustomParams getCustomParams(Context context, boolean enableSelection, boolean showOnLaunch) {
+        return (CustomParams) CustomParams.newBuilder((AppCompatActivity) context)
+        .setEnablePropertyListSelection(true)
+        .setShowPropertyListOnMapLaunch(true)
+        .build();
+    }
     public void launchMapActivity(CallbackContext callback) {
         try {
-            Intent intent = new Intent(this.cordova.getActivity(), MapstedMapActivity.class);
-            this.cordova.getActivity().startActivity(intent);
-            callback.success();
+        AppCompatActivity activity = (AppCompatActivity) cordova.getActivity();
+        Intent intent = new Intent(activity, MapstedMapActivity.class);
+
+        // Obtain CustomParams object with both properties set to true
+        CustomParams customParams = getCustomParams(activity, true, true);
+
+        // Convert CustomParams to JSON
+        String customParamsJson = new Gson().toJson(customParams);
+
+        // Create a bundle and add CustomParams JSON to it
+        Bundle bundle = new Bundle();
+        bundle.putString(SET_CUSTOM_PARAMS_JSON, customParamsJson);
+
+        // Attach bundle to the intent
+        intent.putExtras(bundle);
+
+        // Start activity with the intent
+        activity.startActivity(intent);
+
+        // Notify success
+        callback.success();
         } catch (Exception e) {
-                callback.error("Something went wrong" + e);
+        // Notify error
+        callback.error("Error launching map activity: " + e.getMessage());
         }
     }
-
 
     public void getSearchCoreSdkCallback(CallbackContext callback) {
         try {
