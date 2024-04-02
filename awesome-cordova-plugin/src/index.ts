@@ -23,7 +23,7 @@ import {
   plugin: 'cordova.plugin.mapsted',
   pluginRef: 'CordovaPluginMapsted',
   // repo: 'https://github.com/adrian-bueno/multiplatform-cordova-plugin-example',
-  platforms: ['Android'],
+  platforms: ['Android', 'iOS'],
 })
 @Injectable()
 export class AwesomeCordovaPluginMapsted extends AwesomeCordovaNativePlugin {
