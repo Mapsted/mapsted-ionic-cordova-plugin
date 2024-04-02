@@ -102,3 +102,57 @@ yourIonicCordovaProject\platforms\android\app\src\main\assets\demo_android_licen
 ionic cordova build android
 ```
 5. Echo method in cordova plugin is just for testing that you are able to access the cordova plugin or not.
+
+
+# Integrating into Existing Apps (IOS)
+
+1. Same as android For Sample cordova project, Clone the repo, then install the packages using:
+Sample cordova project repository-
+https://github.com/Mapsted/MapstedSampleIonic/tree/development/mapsted-sample-cordova
+
+```sh
+npm install
+```
+2. Add IOS platform in your ionic cordova project
+```sh
+ionic cordova platform add ios
+```
+2. Install the plugin using local folder path
+```sh
+ionic cordova plugin add <path to YourCordovaPLuginFolder>
+```
+
+3. In your AwesomePluginFolder after git clone install node modules
+```sh
+npm install
+```
+
+4. After npm install you have to run below command before install it in your ionic cordova project
+```sh
+npm run build
+```
+
+5. After you run command "npm run build" you will get dist folder then install then awesome cordova plugin code to your ionic cordova project. 
+
+6. Install awesome cordova plugin
+```sh
+npm install <path to /AwesomePluginFolder/dist>
+```
+
+## File setup 
+
+1. Add IOS licence key file in your Cordova project.
+Path - 
+yourIonicCordovaProject\platforms\ios\yourIonicCordovaProject\Resources\ios_licence.key
+
+2. Add your project name in place of - #import "<#YourProjectName#>-Swift.h"
+Path-
+yourIonicCordovaProject\platforms\ios\yourIonicCordovaProject\Plugins\cordova.plugin.mapsted\CordovaPluginMapsted.m
+
+3. Generate IOS build
+```sh
+ionic cordova build ios
+```
+
+4. Echo method in cordova plugin is just for testing that you are able to access the cordova plugin or not.
+
