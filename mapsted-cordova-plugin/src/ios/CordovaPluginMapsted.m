@@ -1,7 +1,6 @@
 #import "CordovaPluginMapsted.h"
 #import <UIKit/UIKit.h>
-#import "mapstedCordovaProject-Swift.h"
-// #import "<#YourProjectName#>-Swift.h"
+#import "mapstedCordovaProject-Swift.h" // Here you have to #import "<#YourProjectName#>-Swift.h"
 
 @interface CordovaPluginMapsted ()
 
