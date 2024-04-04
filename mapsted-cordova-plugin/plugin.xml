@@ -43,16 +43,24 @@
         </config-file>
         <!-- Add Cordova plugin feature -->
         <config-file parent="/*" target="config.xml">
-            <preference name="deployment-target" value="13.0"/>
             <feature name="CordovaPluginMapsted">
                 <param name="ios-package" value="CordovaPluginMapsted"/>
             </feature>
+            <preference name="deployment-target" value="13.0"/>
+            <preference name="IPHONEOS_DEPLOYMENT_TARGET" value="13.0" />
             <preference name="SwiftVersion" value="5.0" />
         </config-file>
+        <config-file parent="/*" target="*-Info.plist">
+            <string>13.0</string>
+            <key>MinimumOSVersion</key>
+            <dict>
+            <key>IPHONEOS_DEPLOYMENT_TARGET</key>
+            <string>13.0</string>
+            </dict>
+        </config-file>
          <!-- Include header and source files -->
-        <header-file src="src/ios/CordovaPluginMapsted.h" />
-        <source-file src="src/ios/CordovaPluginMapsted.m" />
         <source-file src="src/ios/CordovaPluginMapsted.swift" />
+        <source-file src="src/ios/CordovaMapsted.swift" />
         <source-file src="src/ios/CordovaPluginMapstedPropListViewController.swift" />
         <podspec>
         <config>
