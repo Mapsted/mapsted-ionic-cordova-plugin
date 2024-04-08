@@ -12,10 +12,6 @@ import LocationMarketing
     
     @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     
-    @objc public func echoSwift(_ value: String) -> String {
-        print(value)
-        return value
-    }
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let containerVC = segue.destination as? ContainerViewController, segue.identifier == "containerSegue" {
             self.containerVC = containerVC

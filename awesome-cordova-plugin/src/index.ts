@@ -32,11 +32,6 @@ export class AwesomeCordovaPluginMapsted extends AwesomeCordovaNativePlugin {
   // we defined callback functions before parameters,
   // now we have to declare 'callbackOrder' as 'reverse'.
 
-  @Cordova()
-  echo(arg1: string): Promise<string> {
-    return Promise.resolve(arg1);
-  }
-  
 
   @Cordova()
   launchMapActivity(): Promise<any> {

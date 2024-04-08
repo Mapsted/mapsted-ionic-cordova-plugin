@@ -56,18 +56,4 @@ class CordovaPluginMapsted: CDVPlugin {
         }
     }
 
-    @objc(echo:)
-    func echo(command: CDVInvokedUrlCommand) {
-        guard let value = command.arguments.first as? String else {
-            let pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
-            commandDelegate!.send(pluginResult, callbackId: command.callbackId)
-            return
-        }
-
-        let vc = CordovaPluginMapstedViewController()
-        let echoedValue = vc.echoSwift(value)
-
-        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: echoedValue)
-        commandDelegate!.send(pluginResult, callbackId: command.callbackId)
-    }
 }

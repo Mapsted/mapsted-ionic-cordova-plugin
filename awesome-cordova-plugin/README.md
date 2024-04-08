@@ -103,8 +103,6 @@ yourIonicCordovaProject\platforms\android\app\src\main\assets\demo_android_licen
 ionic cordova build android
 ```
 
-4. Echo method in cordova plugin is just for testing that you are able to access the cordova plugin or not.
-
 # Integrating into Existing Apps (IOS)
 
 1. Same as android For Sample cordova project, Clone the repo, then install the packages using:
@@ -155,5 +153,4 @@ yourIonicCordovaProject\platforms\ios\yourIonicCordovaProject\Plugins\cordova.pl
 ionic cordova build ios
 ```
 
-4. Echo method in cordova plugin is just for testing that you are able to access the cordova plugin or not.
 
