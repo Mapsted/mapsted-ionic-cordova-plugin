@@ -41,7 +41,7 @@ import android.os.Bundle;
 import com.google.gson.Gson;
 
 /**
- * This class echoes a string called from JavaScript.
+ * This class are string called from JavaScript.
  */
 public class CordovaPluginMapsted extends CordovaPlugin {
 
@@ -51,10 +51,7 @@ public class CordovaPluginMapsted extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("echo")) {
-            this.echo(args, callbackContext);
-            return true;
-        } else if (action.equals("launchMapActivity")) {
+       if (action.equals("launchMapActivity")) {
             this.launchMapActivity(callbackContext);
             return true;
         } else if (action.equals("getSearchCoreSdkCallback")) {
@@ -70,18 +67,6 @@ public class CordovaPluginMapsted extends CordovaPlugin {
 
         return false;
     }
-
-    public void echo(JSONArray args, CallbackContext callback) {
-        Log.e(TAG, "echo method called");
-        try {
-            String value = args.getString(0);
-            callback.success(value);
-        } catch (JSONException e) {
-            callback.error("Something went wrong" + e);
-            callback.error("Error parsing arguments: " + e.getMessage());
-        }
-    }
-
 
 
     private CustomParams getCustomParams(Context context, boolean enableSelection, boolean showOnLaunch) {
