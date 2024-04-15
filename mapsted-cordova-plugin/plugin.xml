@@ -7,9 +7,9 @@
         <clobbers target="CordovaPluginMapsted" />
     </js-module>
     <platform name="android">
-        <framework src="com.mapsted:sdk-map-ui:5.4.7" />
-        <framework src="com.mapsted:sdk-map:5.4.7" />
-        <framework src="com.mapsted:sdk-core:5.4.7" />
+        <framework src="com.mapsted:sdk-map-ui:5.4.21" />
+        <framework src="com.mapsted:sdk-map:5.4.21" />
+        <framework src="com.mapsted:sdk-core:5.4.21" />
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="CordovaPluginMapsted">
