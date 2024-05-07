@@ -7,15 +7,18 @@
         <clobbers target="CordovaPluginMapsted" />
     </js-module>
     <platform name="android">
-        <framework src="com.mapsted:sdk-map-ui:5.4.21" />
-        <framework src="com.mapsted:sdk-map:5.4.21" />
-        <framework src="com.mapsted:sdk-core:5.4.21" />
+        <framework src="com.mapsted:sdk-map-ui:5.4.28-rc-1" />
+        <framework src="com.mapsted:sdk-map:5.4.28-rc-1" />
+        <framework src="com.mapsted:sdk-core:5.4.28-rc-1" />
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="CordovaPluginMapsted">
                 <param name="android-package"
                     value="cordova.plugin.mapsted.CordovaPluginMapsted" />
             </feature>
+        </config-file>
+        <config-file parent="application" target="AndroidManifest.xml">
+            <activity android:name="com.mapsted.ui.map.MapstedMapActivity" android:theme="@style/AppTheme" />
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -61,6 +64,7 @@
          <!-- Include header and source files -->
         <source-file src="src/ios/CordovaPluginMapsted.swift" />
         <source-file src="src/ios/CordovaMapsted.swift" />
+        <source-file src="src/ios/CordovaMapsted-Bridging-Header.h" />
         <source-file src="src/ios/CordovaPluginMapstedPropListViewController.swift" />
         <podspec>
         <config>

@@ -1,4 +1,4 @@
-import { AwesomeCordovaPluginMapsted } from './mapsted-workspace/awesome-cordova-plugin-map/src';
+import { AwesomeCordovaPluginMapsted } from './ms-ionic-cordova-plugin-ca/awesome-cordova-plugin/src';
 window.IonicNative = {
 AwesomeCordovaPluginMapsted
 };
