@@ -36,7 +36,6 @@ import java.util.stream.Collectors;
 import android.widget.ProgressBar;
 
 import com.mapsted.ui.map.MapstedMapActivity;
-import com.mapsted.ui.search.SearchCallbacksProvider;
 import android.os.Bundle;
 import com.google.gson.Gson;
 
