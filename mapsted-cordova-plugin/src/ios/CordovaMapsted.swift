@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import Cordova
 
 @objc(CordovaPluginMapsted)
 class CordovaPluginMapsted: CDVPlugin {

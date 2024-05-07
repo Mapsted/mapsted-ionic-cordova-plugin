@@ -143,7 +143,11 @@ npm install <path to /AwesomePluginFolder/dist>
 Path - 
 yourIonicCordovaProject\platforms\ios\yourIonicCordovaProject\Resources\ios_licence.key
 
-2. Generate IOS build
+2. Add your project name in place of - #import "<#YourProjectName#>-Swift.h"
+Path-
+yourIonicCordovaProject\platforms\ios\yourIonicCordovaProject\Plugins\cordova.plugin.mapsted\CordovaPluginMapsted.m
+
+3. Generate IOS build
 ```sh
 ionic cordova build ios
 ```

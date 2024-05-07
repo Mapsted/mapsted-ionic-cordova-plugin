@@ -37,22 +37,6 @@ export class AwesomeCordovaPluginMapsted extends AwesomeCordovaNativePlugin {
   launchMapActivity(): Promise<any> {
     return null;
   }
-
-  @Cordova()
-  getSearchCoreSdkCallback(): Promise<any> {
-    return null;
-  }
-
-  @Cordova()
-  getSearchFeedCallback(): Promise<any> {
-    return null;
-  }
-
-  @Cordova()
-  getSearchAlertCallback(): Promise<any> {
-    return null;
-  }
-  
 }
 
 
