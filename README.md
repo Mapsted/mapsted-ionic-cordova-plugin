@@ -20,7 +20,7 @@ You need to download below things
 
 1. For Sample cordova project, Clone the repo, then install the packages using:
 Sample cordova project repository-
-https://github.com/Mapsted/MapstedSampleIonic/tree/development/mapsted-sample-cordova
+https://github.com/Mapsted/MapstedSampleIonic/tree/master/mapsted-sample-cordova
 ```sh
 npm install
 ```
