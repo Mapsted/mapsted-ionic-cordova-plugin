@@ -1,4 +1,4 @@
-package cordova.plugin.mapsted;
+package mapsted.cordova.plugin;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -42,9 +42,9 @@ import com.google.gson.Gson;
 /**
  * This class are string called from JavaScript.
  */
-public class CordovaPluginMapsted extends CordovaPlugin {
+public class MapstedCordovaPlugin extends CordovaPlugin {
 
-     private static final String TAG = "CordovaPluginMapsted";
+     private static final String TAG = "MapstedCordovaPlugin";
      public static final String SET_CUSTOM_PARAMS_JSON = "Set_Custom_Params_Json";
 
 

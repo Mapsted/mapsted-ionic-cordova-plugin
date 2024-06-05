@@ -1,5 +1,5 @@
 //
-//  CordovaPluginMapstedPropListViewController.swift
+//  MapstedCordovaPluginPropListViewController.swift
 //  Cordova Plugin
 //
 //  Copyright © 2024 Mapsted. All rights reserved.
@@ -9,7 +9,7 @@ import UIKit
 import MapstedCore
 import MapstedMap
 
-class CordovaPluginMapstedPropListViewController: UITableViewController {
+class MapstedCordovaPluginPropListViewController: UITableViewController {
     var spinnerView1: UIActivityIndicatorView?
     
     struct Identifier {
@@ -17,7 +17,7 @@ class CordovaPluginMapstedPropListViewController: UITableViewController {
         static let TABLE_VIEW_CELL = "CELL_PROPERTY"
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? CordovaPluginMapstedViewController,
+        if let destination = segue.destination as? MapstedCordovaPluginViewController,
            segue.identifier == Identifier.SEGUE,
            let property = sender as? PropertyInfo {
             destination.selectedProperty = property
@@ -90,7 +90,7 @@ class CordovaPluginMapstedPropListViewController: UITableViewController {
     }
 }
 
-extension CordovaPluginMapstedPropListViewController : CoreInitCallback {
+extension MapstedCordovaPluginPropListViewController : CoreInitCallback {
     func onFailure(errorCode: EnumSdkError) {
         
     }

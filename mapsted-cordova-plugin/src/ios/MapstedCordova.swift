@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-@objc(CordovaPluginMapsted)
-class CordovaPluginMapsted: CDVPlugin {
+@objc(MapstedCordovaPlugin)
+class MapstedCordovaPlugin: CDVPlugin {
     var showPropertyList: Bool = true
 
     override init() {
@@ -19,7 +19,7 @@ class CordovaPluginMapsted: CDVPlugin {
     func launchMapActivity(command: CDVInvokedUrlCommand) {
         if !showPropertyList {
             // Instantiate the view controller from the Swift storyboard
-            let storyboard = UIStoryboard(name: "CordovaPluginMapsted", bundle: Bundle(for: CordovaPluginMapsted.self))
+            let storyboard = UIStoryboard(name: "MapstedCordovaPlugin", bundle: Bundle(for: MapstedCordovaPlugin.self))
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "MAPSTEDVC") as? UIViewController else {
                 print("Error: Failed to instantiate view controller.")
                 return
@@ -35,7 +35,7 @@ class CordovaPluginMapsted: CDVPlugin {
 
             topViewController?.present(viewController, animated: true, completion: nil)
         } else {
-            let storyboard = UIStoryboard(name: "CordovaPluginMapsted", bundle: Bundle(for: CordovaPluginMapstedPropListViewController.self))
+            let storyboard = UIStoryboard(name: "MapstedCordovaPlugin", bundle: Bundle(for: MapstedCordovaPluginPropListViewController.self))
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "MAPSTEDPROPLISTVC") as? UIViewController else {
                 print("Error: Failed to instantiate view controller.")
                 return

@@ -19,14 +19,14 @@ import {
 // pluginRef == clobbers.target
 
 @Plugin({
-  pluginName: 'CordovaPluginMapsted',
-  plugin: 'cordova.plugin.mapsted',
-  pluginRef: 'CordovaPluginMapsted',
+  pluginName: 'MapstedCordovaPlugin',
+  plugin: 'mapsted.cordova.plugin',
+  pluginRef: 'MapstedCordovaPlugin',
   // repo: 'https://github.com/adrian-bueno/multiplatform-cordova-plugin-example',
   platforms: ['Android', 'iOS'],
 })
 @Injectable()
-export class AwesomeCordovaPluginMapsted extends AwesomeCordovaNativePlugin {
+export class MapstedAwesomeCordovaPlugin extends AwesomeCordovaNativePlugin {
   // For every method, use the @Cordova decorator.
   // Since in our Cordova plugin JavaScript file (www/CordovaPluginExample.js)
   // we defined callback functions before parameters,

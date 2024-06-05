@@ -5,7 +5,7 @@ import MapstedMap
 import MapstedMapUi
 import LocationMarketing
 
-@objc public class CordovaPluginMapstedViewController: UIViewController {
+@objc public class MapstedCordovaPluginViewController: UIViewController {
     private var containerVC: ContainerViewController?
     private var mapsVC: MapstedMapUiViewController?
     var selectedProperty: PropertyInfo? = nil
@@ -110,7 +110,7 @@ import LocationMarketing
 }
 
 //MARK: - Core Init Callback methods
-extension CordovaPluginMapstedViewController : CoreInitCallback {
+extension MapstedCordovaPluginViewController : CoreInitCallback {
     public func onSuccess() {
         DispatchQueue.main.async {
             self.addMapView()
@@ -129,7 +129,7 @@ extension CordovaPluginMapstedViewController : CoreInitCallback {
 }
 
 //MARK: - Routing Request Callback methods
-extension CordovaPluginMapstedViewController: RoutingRequestCallback {
+extension MapstedCordovaPluginViewController: RoutingRequestCallback {
     public func onSuccess(routeResponse: MNRouteResponse) {
         MapstedMapApi.shared.handleRouteResponse(routeResponse: routeResponse)
     }
@@ -139,14 +139,14 @@ extension CordovaPluginMapstedViewController: RoutingRequestCallback {
     }
 }
 
-extension CordovaPluginMapstedViewController: GeofenceEventListener {
+extension MapstedCordovaPluginViewController: GeofenceEventListener {
     public func onGeofenceEvent(propertyId: Int, triggerId: String) {
         // Implementation omitted for brevity
     }
 }
 
 //MARK: - MN Alert Delegate methods
-extension CordovaPluginMapstedViewController : MNAlertDelegate {
+extension MapstedCordovaPluginViewController : MNAlertDelegate {
     public func showAlerts() {
     }
     

@@ -1,0 +1,8 @@
+{
+    "name": "mapsted-awesome-cordova-plugin",
+    "version": "0.0.4",
+    "peerDependencies": {
+        "rxjs": "^5.5.0 || ^6.5.0 || ^7.3.0",
+        "@awesome-cordova-plugins/core": "^6.0.1"
+    }
+}
