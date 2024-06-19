@@ -1,6 +1,6 @@
 {
   "name": "mapsted-cordova-plugin",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "Mapsted cordova plugin.",
   "main": "index.js",
   "scripts": {
