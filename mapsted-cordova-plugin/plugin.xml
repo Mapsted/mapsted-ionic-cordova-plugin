@@ -8,9 +8,9 @@
     </js-module>
     <hook type="after_plugin_install" src="hooks/add_repositories_hook.js" />
     <platform name="android">
-        <framework src="com.mapsted:sdk-map-ui:5.4.30" />
-        <framework src="com.mapsted:sdk-map:5.4.30" />
-        <framework src="com.mapsted:sdk-core:5.4.30" />
+        <framework src="com.mapsted:sdk-map-ui:5.4.32" />
+        <framework src="com.mapsted:sdk-map:5.4.32" />
+        <framework src="com.mapsted:sdk-core:5.4.32" />
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="MapstedCordovaPlugin">
